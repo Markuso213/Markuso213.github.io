@@ -218,7 +218,8 @@ def createDivForSongs(spex, year):
         # ╒══════════════════════════════════════════════╕
         # │ Reads the songTXT from the local harddrive   │
         # └──────────────────────────────────────────────┘
-        f = open(songURL, "r+")
+        f = open(songURL, "r+", encoding="utf8")
+        print(songURL)
         songTXT = f.read()
         f.close()
 
@@ -281,7 +282,7 @@ def createFullWebPage(wk_dir = wk_dir, targetFile = "index.html"):
     print('Attempting to write {}. \n\t Full path: {}'.format("index.html",
         targetURL))
 
-    w = open(targetURL, 'w')
+    w = open(targetURL, 'w', encoding="utf8")
     w.write(webPageString)
     w.close()
 
